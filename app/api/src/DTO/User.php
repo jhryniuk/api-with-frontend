@@ -2,11 +2,13 @@
 
 namespace App\DTO;
 
+use \App\Entity\User as UserEntity;
+
 class User
 {
     private $user;
 
-    public function __construct(\App\Entity\User $user)
+    public function __construct(UserEntity $user)
     {
         $this->user = $user;
     }
@@ -22,7 +24,7 @@ class User
         ];
     }
 
-    public function toObject()
+    public function toObject(): UserEntity
     {
         return $this->user;
     }
